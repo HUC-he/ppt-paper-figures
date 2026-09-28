@@ -16,6 +16,37 @@ catches overlap, undersized text, and off-canvas shapes.
 That export came out of this workflow: the assets are local stand-ins, every word is vector text in
 the deck, and the export is 600 dpi with no overlap and font sizes measured at final print size.
 
+## Highlights
+
+**Editable end to end.** The deliverable is not a flattened PNG but a `.pptx` vector master: text,
+arrows, palette, captions, and scale bars stay editable. When a supervisor or an editor asks for one
+word changed or one panel moved, that is one edit rather than a redraw. This is the thing "ask the
+model for a figure" cannot do, and it is the main reason this workflow exists.
+
+**BioRender-style assets.** Text-free scientific artwork generated in a flat or semi-flat style, on
+a white ground, with thin consistent outlines and one palette, so it reads like BioRender. The
+artwork is entirely original: no BioRender templates, icon library, or existing assets are copied,
+and no brand marks are allowed in frame, so the result is safe to submit.
+
+**Words never go through the model.** Numbers, units, captions, citation tags, and panel letters are
+all set by hand as vector text in the deck. That removes AI lettering and gibberish at the source,
+which is the defect referees notice first and the hardest one to fix afterwards.
+
+**An objective gate before delivery.** Overlap area in mm^2 at final print size, minimum font size,
+a font allow-list, and canvas bounds are checked automatically, and any failure exits non-zero
+instead of relying on a visual squint. It catches things the eye cannot, such as a 3.5 pt label that
+lands at 1.86 pt on paper.
+
+**Submission-grade export.** One command produces the vector PDF and the 600 dpi PNG and reports the
+physical size of each page, which removes the "fine on screen, too small in print" failure.
+
+**Reproducible.** Each asset keeps the prompt and model settings that produced it, so a revision six
+months later regenerates artwork in the same style instead of starting over.
+
+**No platform lock-in.** Apart from LibreOffice, needed only for automated export and optional, no
+paid drawing tool or online subscription is involved. The master opens in PowerPoint, Keynote, or
+WPS.
+
 ## What it is for
 
 - Mechanism schematics, concept figures, graphical abstracts, and multi-panel plates for reviews,

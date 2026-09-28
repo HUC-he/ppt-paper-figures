@@ -19,6 +19,12 @@ before sending it anywhere.
 
 The division of labour is the whole point. The AI makes pictures. PowerPoint makes the figure.
 
+The two properties that decide whether this workflow is worth using are that the result stays
+**editable** (a `.pptx` vector master, not a flattened image) and that the artwork reads in the
+**BioRender style** while remaining entirely original. Keep both in view at every step: an asset that
+cannot be restyled later, or that copies someone else's icon library, has failed the brief even if it
+looks good.
+
 ## Core rule
 
 PowerPoint is the editable master. Text, numbers, units, panel letters, arrows, scale bars, and

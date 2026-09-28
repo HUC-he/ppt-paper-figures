@@ -27,6 +27,26 @@ Write the prompt in six parts, in this order:
 6. Output constraints. High resolution, generous margins, and the text ban stated twice, once
    positively and once as a negative list.
 
+## The BioRender look, without BioRender's assets
+
+The target is the visual language readers already associate with BioRender, achieved with original
+artwork:
+
+- flat or semi-flat shading, at most a soft gradient, never photorealism or 3D rendering;
+- thin, uniform, dark outlines with rounded joins, and rounded rectangles for membranes, layers,
+  and substrates;
+- one restrained palette per figure, pastel or desaturated, with a single accent colour for the
+  element the figure is about;
+- white or very light background, no texture noise, no drop shadows, no decorative gradients;
+- objects drawn from a consistent viewpoint within a panel: cross-section stays cross-section,
+  isometric stays isometric;
+- organelles, molecules, and materials drawn as clean geometric abstractions rather than
+  illustrative paintings.
+
+Two rules come with the style. Do not copy BioRender templates, icons, or existing artwork, and do
+not let the model place a logo, brand mark, or signature anywhere in frame. Generated assets are
+original illustrations for your own figure.
+
 ## The text ban
 
 State it as both a requirement and a prohibition, because a single mention is routinely ignored:
