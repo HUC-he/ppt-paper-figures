@@ -1,0 +1,4 @@
+interface:
+  display_name: "PPT Paper Figures"
+  short_description: "Assemble and QA publication figures in PowerPoint"
+  default_prompt: "Use $ppt-paper-figures to turn these assets into a submission-ready figure: assemble in PPT with vector labels, export PDF and 600 dpi PNG, then run the QA gate."

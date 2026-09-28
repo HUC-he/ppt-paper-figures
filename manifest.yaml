@@ -1,0 +1,26 @@
+name: ppt-paper-figures
+version: 1.0.0
+description: >
+  Declarative manifest for the PPT-first figure workflow. Keeps SKILL.md compact and loads the
+  asset prompt rules, layout rules, and export/QA rules only when that stage runs.
+
+# Design note: the expensive resource here is the figure, not the instructions. Load references
+# per stage, and always run the QA gate before delivery.
+
+always_load:
+  - references/asset-prompts.md
+
+references:
+  on_demand:
+    - condition: choosing the canvas, panel grid, font sizes, palette, or line weights
+      path: references/layout-and-typography.md
+    - condition: exporting the figure, running the QA gate, or handling a QA failure
+      path: references/export-and-qa.md
+
+quality_tools:
+  qa_gate: scripts/figure_qa.py
+  use_when: before any delivery, to check overlap, minimum font size, fonts, and canvas bounds
+  purpose: block a figure that would fail in print
+  exporter: scripts/export_figures.py
+  export_use_when: producing the vector PDF and 600 dpi PNG
+  script_resolution: resolve relative to the skill directory, never the user working directory
